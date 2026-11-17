@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>28.03.2026 • Nossa História ❤️</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(180deg, #1a1625 0%, #2d1b36 35%, #4a1936 70%, #2b1224 100%);
+      color: #f8edeb;
+      padding: 80px 16px 70px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Barra Flutuante do Player de Música */
+    .music-bar {
+      position: fixed;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      background: rgba(35, 18, 42, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 117, 143, 0.45);
+      border-radius: 50px;
+      padding: 8px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    .music-bar:active {
+      transform: translateX(-50%) scale(0.96);
+    }
+
+    .music-btn {
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .music-info {
+      font-family: sans-serif;
+      font-size: 0.85rem;
+      color: #fff0f3;
+      white-space: nowrap;
+    }
+
+    header {
+      text-align: center;
+      margin: 15px 0 35px;
+      max-width: 500px;
+    }
+
+    header h1 {
+      font-size: 2.1rem;
+      color: #ff758f;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 10px rgba(255, 117, 143, 0.3);
+    }
+
+    header p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #f3d5dc;
+      margin-bottom: 22px;
+    }
+
+    /* Contador de Tempo Juntos */
+    .contador-box {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 117, 143, 0.3);
+      border-radius: 14px;
+      padding: 14px 18px;
+      display: inline-block;
+    }
+
+    .contador-titulo {
+      font-family: sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #ffb3c1;
+      margin-bottom: 6px;
+    }
+
+    #contador {
+      font-family: sans-serif;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .album {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      gap: 38px;
+    }
+
+    /* Estilo Polaroid Elegante */
+    .card {
+      background: #fffafb;
+      padding: 14px 14px 26px;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .card.visivel {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 9px;
+      display: block;
+      margin-bottom: 16px;
+      object-fit: cover;
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      color: #c9184a;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 6px;
+      font-family: sans-serif;
+    }
+
+    .titulo-momento {
+      font-size: 1.25rem;
+      color: #590d22;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .texto {
+      font-size: 1.02rem;
+      line-height: 1.65;
+      color: #3a2e32;
+    }
+
+    footer {
+      margin-top: 55px;
+      text-align: center;
+      font-size: 1rem;
+      color: #ffb3c1;
+      max-width: 420px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Áudio e Player Flutuante -->
+  <audio id="bgMusic" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="music-bar" onclick="toggleMusic()">
+    <button class="music-btn" id="playIcon">▶</button>
+    <span class="music-info" id="musicText">Tocar nossa música 🎵</span>
+  </div>
+
+  <header>
+    <h1>aiygiwgwy aiydiwdwy ❤️</h1>
+    <p>Cada foto guarda uma memória desde aquele dia de março.</p>
+    
+    <div class="contador-box">
+      <div class="contador-titulo">Desde 28 de Março de 2026</div>
+      <div id="contador">Calculando nosso tempo...</div>
+    </div>
+  </header>
+
+  <main class="album">
+    <!-- FOTO 01: O PRIMEIRO ENCONTRO -->
+    <article class="card">
+      <img src="foto1.PNG" alt="Mirante da Santa Amélia">
+      <div class="tag">01 • 28 de Março de 2026</div>
+      <div class="titulo-momento">Onde tudo começou</div>
+      <p class="texto">
+        A ida ao Mirante da Santa Amélia foi o cenário perfeito para o nosso primeiro capítulo. Ali, olhando a vista, eu já sentia que aquele  dia ia marcar a minha vida.
+      </p>
+    </article>
+
+    <!-- FOTO 02: CREPÚSCULO E A CHUVA -->
+    <article class="card">
+      <img src="foto2.PNG" alt="Crepúsculo e Chuva">
+      <div class="tag">02 • A Noite Inesquecível</div>
+      <div class="titulo-momento">Crepúsculo, chuva e nosso beijo</div>
+      <p class="texto">
+        Depois do mirante, veio o filme, o som da chuva batendo no carro e o nosso primeiro beijo. Enquanto o mundo lá fora chovia, dentro daquele carro eu encontrei o meu lugar favorito no mundo.
+      </p>
+    </article>
+
+    <!-- FOTO 03 -->
+    <article class="card">
+      <img src="foto3.PNG" alt="Foto 3">
+      <div class="tag">03 • O Seu Sorriso</div>
+      <div class="titulo-momento">A luz dos meus dias</div>
+      <p class="texto">
+        Esse sorriso tem o poder de desmontar qualquer cansaço meu. É a primeira coisa que eu quero ver nos dias bons e o meu refúgio nos dias difíceis.
+      </p>
+    </article>
+
+    <!-- FOTO 04 -->
+    <article class="card">
+      <img src="foto4.PNG" alt="Foto 4">
+      <div class="tag">04 • Cumplicidade</div>
+      <div class="titulo-momento">Sintonia sem esforço</div>
+      <p class="texto">
+        Com você, até o silêncio é confortável e qualquer conversa simples vira o melhor assunto do dia. A gente se entende só pelo olhar.
+      </p>
+    </article>
+
+    <!-- FOTO 05 -->
+    <article class="card">
+      <img src="foto5.PNG" alt="Foto 5">
+      <div class="tag">05 • Leveza</div>
+      <div class="titulo-momento">Nossas risadas</div>
+      <p class="texto">
+        Eu amo o jeito como a gente ri junto das coisas mais bobas. Estar ao seu lado faz tudo parecer mais leve e colorido.
+      </p>
+    </article>
+
+    <!-- FOTO 06 -->
+    <article class="card">
+      <img src="foto6.PNG" alt="Foto 6">
+      <div class="tag">06 • Admiração</div>
+      <div class="titulo-momento">A mulher incrível que você é</div>
+      <p class="texto">
+        Cada dia que passa eu admiro, e sempre te falo com toda verdade "Eu te acho incível que so a poha".
+      </p>
+    </article>
+
+    <!-- FOTO 07 -->
+    <article class="card">
+      <img src="foto7.PNG" alt="Foto 7">
+      <div class="tag">07 • O Seu carinho</div>
+      <div class="titulo-momento">Onde eu me perco e me encontro</div>
+      <p class="texto">
+        Quando você me olha, me abraça e me beija, eu tenho certeza de que fiz a melhor escolha da minha vida.
+      </p>
+    </article>
+
+    <!-- FOTO 08 -->
+    <article class="card">
+      <img src="foto8.PNG" alt="Foto 8">
+      <div class="tag">08 • Sempre juntos</div>
+      <div class="titulo-momento">Qualquer lugar com você</div>
+      <p class="texto">
+        A equação mais bela de todas... Você é minha equação de DIRAC, não impota a distância nem o tempo eu sempre vou estar com você.
+      </p>
+    </article>
+
+    <!-- FOTO 09 -->
+    <article class="card">
+      <img src="foto9.PNG" alt="Foto 9">
+      <div class="tag">09 • Você</div>
+      <div class="titulo-momento">O abraço que cura tudo</div>
+      <p class="texto">
+        Eu já disse que você está muito bonita? Sim nesse exato momente sei que você está. And G O S T O S A.
+      </p>
+    </article>
+
+    <!-- FOTO 10 -->
+    <article class="card">
+      <img src="foto10.PNG" alt="Foto 10">
+      <div class="tag">10 • Detalhes</div>
+      <div class="titulo-momento">Pequenos grandes momentos</div>
+      <p class="texto">
+        É nos detalhes da nossa vida, nas mensagens, nas ligações de vídeo, nas saídas.
+      </p>
+    </article>
+
+    <!-- FOTO 11 -->
+    <article class="card">
+      <img src="foto11.PNG" alt="Foto 11">
+      <div class="tag">11 • Encanto</div>
+      <div class="titulo-momento">Simplesmente linda</div>
+      <p class="texto">
+        Às vezes eu fico só te observando e pensando na sorte que eu tenho de ter você comigo. Você é linda por dentro e por fora.
+      </p>
+    </article>
+
+    <!-- FOTO 12 -->
+    <article class="card">
+      <img src="foto12.PNG" alt="Foto 12">
+      <div class="tag">12 • Parceria</div>
+      <div class="titulo-momento">Lado a lado</div>
+      <p class="texto">
+        Obrigado por ser minha parceira, por me apoiar e por dividir comigo os seus sonhos, planos. TMJ SLK MINHA PARCERA.
+      </p>
+    </article>
+
+    <!-- FOTO 13 -->
+    <article class="card">
+      <img src="foto13.PNG" alt="Foto 13">
+      <div class="tag">13 • Saudade</div>
+      <div class="titulo-momento">A vontade de te ver sempre</div>
+      <p class="texto">
+        Basta a gente se despedir para eu já começar a contar os minutos para te encontrar de novo e ouvir a sua voz.
+      </p>
+    </article>
+
+    <!-- FOTO 14 -->
+    <article class="card">
+      <img src="foto14.PNG" alt="Foto 14">
+      <div class="tag">14 • Magia</div>
+      <div class="titulo-momento">O nosso próprio destino</div>
+      <p class="texto">
+        A gente começou assistindo a um filme no primeiro encontro, mas parece que foi... MÁGICA. Parece mágica Nascemos um pro outro. A Lua e o mar. O Sol e o amanhecer. Nada conseguirá mudar
+      </p>
+    </article>
+
+    <!-- FOTO 15 -->
+    <article class="card">
+      <img src="foto15.PNG" alt="Foto 15">
+      <div class="tag">15 • Segurança</div>
+      <div class="titulo-momento">Meu porto seguro</div>
+      <p class="texto">
+        Com você eu posso ser exatamente quem eu sou, sem filtros e sem medo. AU + TISMO
+      </p>
+    </article>
+
+    <!-- FOTO 16 -->
+    <article class="card">
+      <img src="foto16.PNG" alt="Foto 16">
+      <div class="tag">16 • Felicidade</div>
+      <div class="titulo-momento">O que você desperta em mim</div>
+      <p class="texto">
+        Você me faz querer ser uma pessoa melhor todos os dias. Trabalhar, estudar e tudo por voçê
+      </p>
+    </article>
+
+    <!-- FOTO 17 -->
+    <article class="card">
+      <img src="foto17.PNG" alt="Foto 17">
+      <div class="tag">17 • Química</div>
+      <div class="titulo-momento">Nosso encaixe perfeito</div>
+      <p class="texto">
+        Do jeito que nossas mãos se encaixam até a forma como nossos pensamentos se cruzam, tudo em nós faz sentido. Parece que foi macumba.
+      </p>
+    </article>
+
+    <!-- FOTO 18 -->
+    <article class="card">
+      <img src="foto18.PNG" alt="Foto 18">
+      <div class="tag">18 • Gratidão</div>
+      <div class="titulo-momento">Por ter você</div>
+      <p class="texto">
+        Se eu pudesse voltar no tempo para aquele dia 28 de março, eu faria exatamente tudo igual, só para chegar até aqui com você.
+      </p>
+    </article>
+
+    <!-- FOTO 19 -->
+    <article class="card">
+      <img src="foto19.PNG" alt="Foto 19">
+      <div class="tag">19 • Futuro</div>
+      <div class="titulo-momento">O que ainda vem pela frente</div>
+      <p class="texto">
+        Isso tudo é só o começo. Ainda temos muitos mirantes para visitar, muitos filmes para assistir e uma vida inteira para viver juntos.
+      </p>
+    </article>
+
+    <!-- FOTO 20 -->
+    <article class="card">
+      <img src="foto20.PNG" alt="Foto 20">
+      <div class="tag">20 • Para Sempre</div>
+      <div class="titulo-momento">Eu te amo!</div>
+      <p class="texto">
+        Em todas as estações, com sol ou com chuva, em qualquer lugar. é você que eu escolho hoje e sempre. Eu te amo ❤️
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    Feito especialmente para você, com todo o meu amor.<br>
+    Desde 28/03/2026 até a eternidade.
+  </footer>
+
+  <script>
+    // 1. Controle da Música
+    const audio = document.getElementById('bgMusic');
+    const playIcon = document.getElementById('playIcon');
+    const musicText = document.getElementById('musicText');
+    let tocando = false;
+
+    function toggleMusic() {
+      if (tocando) {
+        audio.pause();
+        playIcon.innerText = '▶';
+        musicText.innerText = 'Tocar nossa música 🎵';
+        tocando = false;
+      } else {
+        audio.play();
+        playIcon.innerText = '⏸';
+        musicText.innerText = 'Tocando nossa música...';
+        tocando = true;
+      }
+    }
+
+    // 2. Contador em tempo real desde 28/03/2026
+    function atualizarContador() {
+      const inicio = new Date('2026-03-28T20:00:00');
+      const agora = new Date();
+      const diff = agora - inicio;
+
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diff / 1000 / 60) % 60);
+
+      document.getElementById('contador').innerText = 
+        `${dias} dias, ${horas} horas e ${minutos} minutos juntos`;
+    }
+    atualizarContador();
+    setInterval(atualizarContador, 60000);
+
+    // 3. Animação suave ao rolar a tela no celular
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visivel');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.card').forEach(card => observer.observe(card));
+  </script>
+
+</body>
+</html>
