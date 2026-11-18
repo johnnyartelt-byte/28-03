@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>28.03.2026 • Nossa História ❤️</title>
+  <title>28.03.2026 • ❤️</title>
   <style>
     * {
       box-sizing: border-box;
@@ -88,7 +88,6 @@
       margin-bottom: 22px;
     }
 
-    /* Contador de Tempo Juntos */
     .contador-box {
       background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(8px);
@@ -96,6 +95,7 @@
       border-radius: 14px;
       padding: 14px 18px;
       display: inline-block;
+      max-width: 100%;
     }
 
     .contador-titulo {
@@ -109,9 +109,18 @@
 
     #contador {
       font-family: sans-serif;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: bold;
       color: #ffffff;
+      line-height: 1.4;
+    }
+
+    .contador-sub {
+      font-family: sans-serif;
+      font-size: 0.82rem;
+      color: #ffccd5;
+      margin-top: 6px;
+      font-style: italic;
     }
 
     .album {
@@ -184,12 +193,12 @@
 
   <!-- Áudio e Player Flutuante -->
   <audio id="bgMusic" loop>
-    <source src="musica.mp3" type="audio/mpeg">
+    <source src="musica.mp3.mp3" type="audio/mpeg">
   </audio>
 
   <div class="music-bar" onclick="toggleMusic()">
     <button class="music-btn" id="playIcon">▶</button>
-    <span class="music-info" id="musicText">Tocar nossa música 🎵</span>
+    <span class="music-info" id="musicText">Sua musica favorita 🎵</span>
   </div>
 
   <header>
@@ -199,33 +208,34 @@
     <div class="contador-box">
       <div class="contador-titulo">Desde 28 de Março de 2026</div>
       <div id="contador">Calculando nosso tempo...</div>
+      <div class="contador-sub">tamo junto desde... registrado, assinado, com aliança parcelada em 12x</div>
     </div>
   </header>
 
   <main class="album">
     <!-- FOTO 01: O PRIMEIRO ENCONTRO -->
     <article class="card">
-      <img src="foto1.PNG" alt="Mirante da Santa Amélia">
+      <img src="foto1.PNG.png" alt="Mirante da Santa Amélia">
       <div class="tag">01 • 28 de Março de 2026</div>
       <div class="titulo-momento">Onde tudo começou</div>
       <p class="texto">
-        A ida ao Mirante da Santa Amélia foi o cenário perfeito para o nosso primeiro capítulo. Ali, olhando a vista, eu já sentia que aquele  dia ia marcar a minha vida.
+        A ida ao Mirante da Santa Amélia foi o cenário perfeito para o nosso primeiro capítulo. Ali, olhando a vista, eu já sentia que aquele dia ia marcar a minha vida.
       </p>
     </article>
 
     <!-- FOTO 02: CREPÚSCULO E A CHUVA -->
     <article class="card">
-      <img src="foto2.PNG" alt="Crepúsculo e Chuva">
+      <img src="foto2.PNG.png" alt="Crepúsculo e Chuva">
       <div class="tag">02 • A Noite Inesquecível</div>
       <div class="titulo-momento">Crepúsculo, chuva e nosso beijo</div>
       <p class="texto">
-        Depois do mirante, veio o filme, o som da chuva batendo no carro e o nosso primeiro beijo. Enquanto o mundo lá fora chovia, dentro daquele carro eu encontrei o meu lugar favorito no mundo.
+        Depois do mirante, veio o filme, o som da chuva batendo no carro. Enquanto o mundo lá fora chovia, dentro daquele carro eu encontrei o meu lugar favorito no mundo.
       </p>
     </article>
 
     <!-- FOTO 03 -->
     <article class="card">
-      <img src="foto3.PNG" alt="Foto 3">
+      <img src="foto3.PNG.jpg" alt="Foto 3">
       <div class="tag">03 • O Seu Sorriso</div>
       <div class="titulo-momento">A luz dos meus dias</div>
       <p class="texto">
@@ -235,7 +245,7 @@
 
     <!-- FOTO 04 -->
     <article class="card">
-      <img src="foto4.PNG" alt="Foto 4">
+      <img src="foto4.PNG.png" alt="Foto 4">
       <div class="tag">04 • Cumplicidade</div>
       <div class="titulo-momento">Sintonia sem esforço</div>
       <p class="texto">
@@ -245,7 +255,7 @@
 
     <!-- FOTO 05 -->
     <article class="card">
-      <img src="foto5.PNG" alt="Foto 5">
+      <img src="foto5.PNG.jpg" alt="Foto 5">
       <div class="tag">05 • Leveza</div>
       <div class="titulo-momento">Nossas risadas</div>
       <p class="texto">
@@ -255,7 +265,7 @@
 
     <!-- FOTO 06 -->
     <article class="card">
-      <img src="foto6.PNG" alt="Foto 6">
+      <img src="foto6.PNG.jpg" alt="Foto 6">
       <div class="tag">06 • Admiração</div>
       <div class="titulo-momento">A mulher incrível que você é</div>
       <p class="texto">
@@ -265,7 +275,7 @@
 
     <!-- FOTO 07 -->
     <article class="card">
-      <img src="foto7.PNG" alt="Foto 7">
+      <img src="foto7.PNG.png" alt="Foto 7">
       <div class="tag">07 • O Seu carinho</div>
       <div class="titulo-momento">Onde eu me perco e me encontro</div>
       <p class="texto">
@@ -275,7 +285,7 @@
 
     <!-- FOTO 08 -->
     <article class="card">
-      <img src="foto8.PNG" alt="Foto 8">
+      <img src="foto8.PNG.jpg" alt="Foto 8">
       <div class="tag">08 • Sempre juntos</div>
       <div class="titulo-momento">Qualquer lugar com você</div>
       <p class="texto">
@@ -285,7 +295,7 @@
 
     <!-- FOTO 09 -->
     <article class="card">
-      <img src="foto9.PNG" alt="Foto 9">
+      <img src="foto9.PNG.png" alt="Foto 9">
       <div class="tag">09 • Você</div>
       <div class="titulo-momento">O abraço que cura tudo</div>
       <p class="texto">
@@ -295,17 +305,17 @@
 
     <!-- FOTO 10 -->
     <article class="card">
-      <img src="foto10.PNG" alt="Foto 10">
+      <img src="foto10.PNG.png" alt="Foto 10">
       <div class="tag">10 • Detalhes</div>
       <div class="titulo-momento">Pequenos grandes momentos</div>
       <p class="texto">
-        É nos detalhes da nossa vida, nas mensagens, nas ligações de vídeo, nas saídas.
+        É nos detalhes da nossa vida, nas mensagens, nas ligações de vídeo, em tudo até pra sair pra comprar bolo de chocolate na esquina.
       </p>
     </article>
 
     <!-- FOTO 11 -->
     <article class="card">
-      <img src="foto11.PNG" alt="Foto 11">
+      <img src="foto11.PNG.png" alt="Foto 11">
       <div class="tag">11 • Encanto</div>
       <div class="titulo-momento">Simplesmente linda</div>
       <p class="texto">
@@ -315,17 +325,17 @@
 
     <!-- FOTO 12 -->
     <article class="card">
-      <img src="foto12.PNG" alt="Foto 12">
+      <img src="foto12.PNG.png" alt="Foto 12">
       <div class="tag">12 • Parceria</div>
       <div class="titulo-momento">Lado a lado</div>
       <p class="texto">
-        Obrigado por ser minha parceira, por me apoiar e por dividir comigo os seus sonhos, planos. TMJ SLK MINHA PARCERA.
+        Obrigado por ser minha paceira, por me apoiar e por dividir comigo os seus sonhos, planos. TMJ SLK MINHA PARCERA.
       </p>
     </article>
 
     <!-- FOTO 13 -->
     <article class="card">
-      <img src="foto13.PNG" alt="Foto 13">
+      <img src="foto13.PNG.png" alt="Foto 13">
       <div class="tag">13 • Saudade</div>
       <div class="titulo-momento">A vontade de te ver sempre</div>
       <p class="texto">
@@ -335,7 +345,7 @@
 
     <!-- FOTO 14 -->
     <article class="card">
-      <img src="foto14.PNG" alt="Foto 14">
+      <img src="foto14.PNG.png" alt="Foto 14">
       <div class="tag">14 • Magia</div>
       <div class="titulo-momento">O nosso próprio destino</div>
       <p class="texto">
@@ -345,7 +355,7 @@
 
     <!-- FOTO 15 -->
     <article class="card">
-      <img src="foto15.PNG" alt="Foto 15">
+      <img src="foto15.PNG.png" alt="Foto 15">
       <div class="tag">15 • Segurança</div>
       <div class="titulo-momento">Meu porto seguro</div>
       <p class="texto">
@@ -355,17 +365,17 @@
 
     <!-- FOTO 16 -->
     <article class="card">
-      <img src="foto16.PNG" alt="Foto 16">
+      <img src="foto16.PNG.png" alt="Foto 16">
       <div class="tag">16 • Felicidade</div>
       <div class="titulo-momento">O que você desperta em mim</div>
       <p class="texto">
-        Você me faz querer ser uma pessoa melhor todos os dias. Trabalhar, estudar e tudo por voçê
+        Você me faz querer ser uma pessoa melhor todos os dias. Apesar de tudo, eu sempre tento ser o melhor pra você.
       </p>
     </article>
 
     <!-- FOTO 17 -->
     <article class="card">
-      <img src="foto17.PNG" alt="Foto 17">
+      <img src="foto17.PNG.png" alt="Foto 17">
       <div class="tag">17 • Química</div>
       <div class="titulo-momento">Nosso encaixe perfeito</div>
       <p class="texto">
@@ -375,7 +385,7 @@
 
     <!-- FOTO 18 -->
     <article class="card">
-      <img src="foto18.PNG" alt="Foto 18">
+      <img src="foto18.PNG.png" alt="Foto 18">
       <div class="tag">18 • Gratidão</div>
       <div class="titulo-momento">Por ter você</div>
       <p class="texto">
@@ -385,7 +395,7 @@
 
     <!-- FOTO 19 -->
     <article class="card">
-      <img src="foto19.PNG" alt="Foto 19">
+      <img src="foto19.PNG.png" alt="Foto 19">
       <div class="tag">19 • Futuro</div>
       <div class="titulo-momento">O que ainda vem pela frente</div>
       <p class="texto">
@@ -395,7 +405,7 @@
 
     <!-- FOTO 20 -->
     <article class="card">
-      <img src="foto20.PNG" alt="Foto 20">
+      <img src="foto20.PNG.png" alt="Foto 20">
       <div class="tag">20 • Para Sempre</div>
       <div class="titulo-momento">Eu te amo!</div>
       <p class="texto">
@@ -405,7 +415,7 @@
   </main>
 
   <footer>
-    Feito especialmente para você, com todo o meu amor.<br>
+    Você sempre vai estar comigo, EU TE AMO, meu amor.<br>
     Desde 28/03/2026 até a eternidade.
   </footer>
 
@@ -420,7 +430,7 @@
       if (tocando) {
         audio.pause();
         playIcon.innerText = '▶';
-        musicText.innerText = 'Tocar nossa música 🎵';
+        musicText.innerText = 'Sua musica favorita 🎵';
         tocando = false;
       } else {
         audio.play();
